@@ -26,11 +26,9 @@ SECRET_KEY = 'django-insecure-=oiz$-swg0*%hu4knc)n^l&f23tt1oic(ack84k7m)r&2-m2-p
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['*']
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -51,7 +49,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'sre_oauth.urls'
+ROOT_URLCONF = 'sre_oauth.root_urls'
 
 TEMPLATES = [
     {
@@ -75,14 +73,6 @@ WSGI_APPLICATION = 'sre_oauth.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-'''DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}'''
-
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -93,11 +83,6 @@ DATABASES = {
 }
 
 AUTH_USER_MODEL = 'oauth.User'
-
-
-'''from oauth.models import User
-
-User.get_full_name'''
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -136,6 +121,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = path_join(BASE_DIR, 'assets/')
+
+STATICFILES_DIRS = [
+    path_join(BASE_DIR, 'static')
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

@@ -1,2 +1,2 @@
 from .user_account import User
-from . import sample
+from . import sample_models

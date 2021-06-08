@@ -11,7 +11,7 @@ class UserAdmin(BaseUserAdmin):
     form = UserAdminChangeForm
     add_form = UserAdminCreationForm
 
-    list_display = ['get_full_name', 'email']
+    list_display = ['get_full_name', 'email','is_active','date_joined']
     list_filter = ('is_staff', 'is_superuser', 'is_active', 'groups')
 
     fieldsets = (
