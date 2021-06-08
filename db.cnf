@@ -1,0 +1,6 @@
+[client]
+database = sre_oauth
+user = ban
+password = 1234
+host = 127.0.0.1
+default-character-set = utf8
